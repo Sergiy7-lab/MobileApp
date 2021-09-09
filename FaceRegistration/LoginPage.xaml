@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FaceRegistration.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <AbsoluteLayout >
+        <Image AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               Source="background"
+               Aspect="AspectFill" />
+
+        <Grid AbsoluteLayout.LayoutBounds="1, 1, 1, 1"  AbsoluteLayout.LayoutFlags="All">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid  Grid.Row="0" Padding="0, 20, 0, 0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid  Grid.Row="0">
+                    <Image x:Name="image1"  HorizontalOptions="Center"  Margin="90, 0, 90, 0" />
+                </Grid>
+
+                <Grid  Grid.Row="1">
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Enter your name and the digital key" 
+                               TextColor="White" FontSize="16" 
+                               HorizontalOptions="Center" />
+                        <Label Text="provided by your reselle" 
+                               TextColor="White" 
+                               FontSize="16" 
+                               HorizontalOptions="Center" />
+                    </StackLayout>
+                </Grid>
+
+                <Grid  Grid.Row="2">
+                    <StackLayout VerticalOptions="Center">
+                        <Label HorizontalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Scan QR code to Start" 
+                                          FontAttributes="Bold" 
+                                          FontSize="18" 
+                                          TextColor="White" 
+                                          TextDecorations="Underline" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+
+            <Grid  Grid.Row="1" Margin="20, 0, 20, 0" >
+
+                <StackLayout Orientation="Vertical" Spacing="30">
+                    <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                        <StackLayout>
+                            <Label  Text="Full Name" FontSize="16" TextColor="White" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame BorderColor="#46558c" BackgroundColor="#252443" CornerRadius="6" HasShadow="False">
+                                <Entry x:Name="NameEntry" Placeholder = "John Doe" PlaceholderColor = "DimGray" 
+                                Keyboard = "Text" TextColor = "White" BackgroundColor="Transparent" />
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS" Value="0, 0" />
+                                        <On Platform="Android" Value="10, -10" />
+                                    </OnPlatform>
+                                </Frame.Padding>
+                                <Frame.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS" Value="55" />
+                                        <On Platform="Android" Value="75" />
+                                    </OnPlatform>
+                                </Frame.HeightRequest>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout VerticalOptions="Start" >
+                        <StackLayout>
+                            <Label  Text="Digital Key" FontSize="16" TextColor="White" />
+                        </StackLayout>
+                        <StackLayout>
+
+                            <Frame BorderColor="#46558c" BackgroundColor="#252443" CornerRadius="6" HasShadow="False">
+                                <Entry x:Name="IdEntry" Placeholder = "Example: 1KLS43SDF43DSK23" PlaceholderColor = "DimGray" 
+                                Keyboard = "Text" TextColor = "White" BackgroundColor="Transparent" />
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS" Value="0, 0" />
+                                        <On Platform="Android" Value="10, -10" />
+                                    </OnPlatform>
+                                </Frame.Padding>
+                                <Frame.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS" Value="55" />
+                                        <On Platform="Android" Value="75" />
+                                    </OnPlatform>
+                                </Frame.HeightRequest>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout  VerticalOptions="CenterAndExpand">
+
+                        <Button Text="Active Application" TextTransform="None" Background="#222a44" TextColor="White" Font="18"
+                            CornerRadius="6" HeightRequest="55" Clicked="Button_Clicked"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+
+    </AbsoluteLayout>
+</ContentPage>
